@@ -34,7 +34,7 @@ namespace CaterSoftData.Configuration {
              ISessionFactory buildSessionFactory=null ;
             try{
                FluentConfiguration fluentConfiguration=mappings.ExposeConfiguration(d => 
-               { new SchemaUpdate(d).Execute(true,true);
+               { new SchemaUpdate(d).Execute(false,true);
                             new SchemaExport(d)
                 .Create(false,false);});
                buildSessionFactory= fluentConfiguration.BuildSessionFactory();

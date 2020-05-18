@@ -51,6 +51,39 @@ namespace CaterSoftDomain.Contracts
         public int StartOrderRefNumber { get; set; }
         public double DeclaredTakings { get; set; }
         public string SessionStatus { get; set; }
+        public string Items { get; set; }
+        public DateTime? OCDate { get; set; }
+        public int? OCRef { get; set; }
+        public double? OCTotalItems { get; set; }
+        public double? OCOrderTotal { get; set; }
+        public string OCItems { get; set; }
+        public string OCChangedBy { get; set; }
+        public double? OCDiscount { get; set; }
+        public string OCDiscountReason { get; set; }
+
+        public double? OCRefund { get; set; }
+        public double? OCDelivery { get; set; }
+        public double? OCReceiptTip { get; set; }
+        public double? OCReceiptServiceCharge { get; set; }
+        public double? OCReceiptCashAmount { get; set; }
+
+        public double? OCReceiptChequeAmount { get; set; }
+        public double? OCReceiptCreditCardAmount { get; set; }
+
+        public double? OCReceiptVoucherAmount { get; set; }
+        public double? OCTenderedAmount { get; set; }
+        public double? OCChangeAmount { get; set; }
+        public double? OCLoyaltyDiscount { get; set; }
+        public double? OCLoyaltyBal { get; set; }
+        public int? OCTillNumber { get; set; }
+
+        public string OCForeignCurrency { get; set; }
+        public int? OCSessionID { get; set; }
+        public double? OCReceiptWebAmount { get; set; }
+
+        public virtual DateTime? Date3 { get; set; }
+
+
 
     }
 }

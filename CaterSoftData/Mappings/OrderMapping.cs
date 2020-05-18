@@ -11,8 +11,9 @@ namespace CaterSoftData.Mappings
             mapping.Table("POrder");
             mapping.Schema("CaterSoft");
             mapping.Id(it=>it.Id);
-            mapping.Map(it=>it.Ref).Column("RefId");
             
+            mapping.Map(it=>it.Ref).Column("RefId");
+            mapping.Map(it=>it.Items).CustomType("StringClob").CustomSqlType("nvarchar(max)");
             mapping.Map(it=>it.Tenant);
         }
     }

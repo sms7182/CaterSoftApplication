@@ -7,6 +7,7 @@ using AutoMapper;
 using CaterSoftDomain.Contracts;
 using CaterSoftDomain.IRepositories;
 using CaterSoftDomain.Models;
+using CaterSoftDomain.Views;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -53,6 +54,7 @@ namespace CaterSoftApp.Controllers
           
         }
 
+       
         [HttpGet("apitesting")]
         public IActionResult GetTest()
         {

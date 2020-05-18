@@ -4,6 +4,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using CaterSoftData.Repositories;
+using CaterSoftDomain;
 using CaterSoftDomain.IRepositories;
 
 using Microsoft.Extensions.Configuration;
@@ -23,9 +24,10 @@ namespace CaterSoftData.Configuration
         {
            windsorContainer.Kernel.ComponentRegistered+=Kernel_ComponentRegistered;
             var dbtype=configuration.GetSection("DBType").Value;
-         
+          
             ORMSession.configuration=configuration;
            windsorContainer.Register(
+              
             Component.For<ISessionFactory>().UsingFactoryMethod(ORMSession.CreateMSSqlNhSessionFactory).LifeStyle.Singleton,
             Component.For<NhUnitOfWorkInterceptor>().LifeStyle.Transient,
 

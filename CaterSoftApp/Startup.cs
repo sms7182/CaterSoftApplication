@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CaterSoftApp.Configuration;
 using CaterSoftData.Configuration;
+using CaterSoftData.Repositories;
+using CaterSoftDomain;
 using CaterSoftDomain.Contracts;
+using CaterSoftDomain.IRepositories;
 using CaterSoftDomain.Models;
 using Microsoft.AspNetCore.Authentication.Certificate;
 using Microsoft.AspNetCore.Builder;
@@ -76,7 +79,8 @@ namespace CaterSoftApp
             //            });
 
             //  });
-
+            services.AddScoped<IWorkingContext, WorkingContext>();
+            services.AddSingleton<IFindFunction>(new FindFunction());
             services.AddControllers(options => options.EnableEndpointRouting = false);
           
             return services.DependencyExtension(Configuration);
@@ -101,7 +105,13 @@ namespace CaterSoftApp
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
+            app.Use(async (context, next) =>
+            {
+                var services=app.ApplicationServices;
+              
+                WorkingContextInit( services.GetService<IWorkingContext>());
+                await next.Invoke();
+            });
             
             // app.UseSwagger();
             // app.UseSwaggerUI(c =>
@@ -131,6 +141,10 @@ namespace CaterSoftApp
             app.UseMvc();
            
 
+        }
+        private void WorkingContextInit(IWorkingContext workingContext)
+        {
+            workingContext.Tenant = "fromhome";
         }
     }
 }
