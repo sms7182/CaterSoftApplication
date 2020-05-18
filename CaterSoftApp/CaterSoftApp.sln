@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaterSoftApp", "CaterSoftApp.csproj", "{CC437E7A-DB92-44C0-B83B-9EA405036DF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaterSoftApp", "CaterSoftApp.csproj", "{CC437E7A-DB92-44C0-B83B-9EA405036DF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaterSoftData", "..\CaterSoftData\CaterSoftData.csproj", "{9F07B5E3-4329-4B0A-A1DC-8AB0745E8ACC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaterSoftData", "..\CaterSoftData\CaterSoftData.csproj", "{9F07B5E3-4329-4B0A-A1DC-8AB0745E8ACC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaterSoftDomain", "..\CaterSoftDomain\CaterSoftDomain.csproj", "{20FA0FFC-C09D-49FD-BCE5-5AC1F05423D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaterSoftDomain", "..\CaterSoftDomain\CaterSoftDomain.csproj", "{20FA0FFC-C09D-49FD-BCE5-5AC1F05423D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

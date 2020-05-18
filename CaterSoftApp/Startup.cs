@@ -53,6 +53,10 @@ namespace CaterSoftApp
                 options.InputFormatters.Add(new TextPlainInputFormatter());
             });
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",new Microsoft.OpenApi.Models.OpenApiInfo {Title="My Api",Version="v1" });
+            });
             services.AddAuthentication(
             CertificateAuthenticationDefaults.AuthenticationScheme)
        .AddCertificate();
@@ -90,6 +94,11 @@ namespace CaterSoftApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c=> {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API Version 1");
+            }
+             );
             app.UseAuthentication();
             app.UseRouting();
             app.UseCors("MyPolicy");
